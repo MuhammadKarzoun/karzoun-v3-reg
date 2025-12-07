@@ -1,0 +1,15 @@
+الاسم الأول - firstName
+الاسم الأخير - lastName  
+البريد الإلكتروني - email
+رقم الهاتف - phone
+إنشاء حسابك - Create your account
+أخبرنا عن نفسك - Tell us a bit about yourself
+الاسم الأول مطلوب - First name is required
+الاسم الأخير مطلوب - Last name is required  
+البريد الإلكتروني مطلوب - Email is required
+الرجاء إدخال بريد إلكتروني صحيح - Please enter a valid email address
+رقم الهاتف مطلوب - Phone number is required
+الرجاء إدخال رقم هاتف صحيح - Please enter a valid phone number
+متابعة - Continue
+رجوع - Back
+سنرسل لك رمز تحقق لتأكيد رقم هاتفك - We'll send you a verification code
