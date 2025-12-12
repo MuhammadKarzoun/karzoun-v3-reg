@@ -172,7 +172,7 @@ export default function VerificationStep({
           <label className="block text-sm font-medium text-gray-900 mb-4 text-center">
             أدخل الرمز المكون من {CODE_LENGTH} أرقام
           </label>
-          <div className="flex gap-3 justify-center mb-6" onPaste={handlePaste}>
+          <div className="flex gap-3 justify-center mb-6" dir="ltr" onPaste={handlePaste}>
             {code.map((digit, index) => (
               <input
                 key={index}
@@ -183,6 +183,7 @@ export default function VerificationStep({
                 value={digit}
                 onChange={(e) => handleChange(index, e.target.value)}
                 onKeyDown={(e) => handleKeyDown(index, e)}
+                dir="ltr"
                 className={`w-14 h-16 text-center text-2xl font-bold rounded-xl border-2 bg-white outline-none transition-all duration-200 ${
                   error
                     ? 'border-red-300 focus:border-red-500'

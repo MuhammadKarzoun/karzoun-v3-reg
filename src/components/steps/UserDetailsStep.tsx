@@ -344,7 +344,7 @@ export default function UserDetailsStep({ initialData, onNext, onBack, serverErr
             />
             <Phone className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
             {formData.phone && !errors.phone && validatePhone(formData.phone) && (
-              <div className="absolute right-12 top-1/2 -translate-y-1/2 text-green-600">
+              <div className="absolute left-40 top-1/2 -translate-y-1/2 text-green-600">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
