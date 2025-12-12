@@ -179,7 +179,7 @@ export default function UserDetailsStep({ initialData, onNext, onBack, serverErr
                 onBlur={() => setFocusedField(null)}
                 placeholder="أحمد"
                 dir="rtl"
-                className={`w-full px-5 py-4 text-base rounded-xl border-2 bg-white outline-none transition-all duration-300 text-gray-900 placeholder-gray-400 ${
+                className={`w-full pr-5 pl-12 py-4 text-base rounded-xl border-2 bg-white outline-none transition-all duration-300 text-gray-900 placeholder-gray-400 ${
                   errors.firstName
                     ? 'border-red-300 focus:border-red-500'
                     : focusedField === 'firstName'
@@ -189,7 +189,7 @@ export default function UserDetailsStep({ initialData, onNext, onBack, serverErr
                 autoFocus
               />
               {formData.firstName && !errors.firstName && (
-                <div className="absolute right-4 top-1/2 -translate-y-1/2 text-green-600">
+                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-green-600">
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
@@ -220,7 +220,7 @@ export default function UserDetailsStep({ initialData, onNext, onBack, serverErr
                 onBlur={() => setFocusedField(null)}
                 placeholder="محمد"
                 dir="rtl"
-                className={`w-full px-5 py-4 text-base rounded-xl border-2 bg-white outline-none transition-all duration-300 text-gray-900 placeholder-gray-400 ${
+                className={`w-full pr-5 pl-12 py-4 text-base rounded-xl border-2 bg-white outline-none transition-all duration-300 text-gray-900 placeholder-gray-400 ${
                   errors.lastName
                     ? 'border-red-300 focus:border-red-500'
                     : focusedField === 'lastName'
@@ -229,7 +229,7 @@ export default function UserDetailsStep({ initialData, onNext, onBack, serverErr
                 }`}
               />
               {formData.lastName && !errors.lastName && (
-                <div className="absolute right-4 top-1/2 -translate-y-1/2 text-green-600">
+                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-green-600">
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
@@ -262,7 +262,7 @@ export default function UserDetailsStep({ initialData, onNext, onBack, serverErr
               onBlur={() => setFocusedField(null)}
               placeholder="you@company.com"
               dir="ltr"
-              className={`w-full pr-12 pl-12 py-4 text-base rounded-xl border-2 bg-white outline-none transition-all duration-300 text-gray-900 placeholder-gray-400 ${
+              className={`w-full pr-12 pl-5 py-4 text-base rounded-xl border-2 bg-white outline-none transition-all duration-300 text-gray-900 placeholder-gray-400 ${
                 errors.email
                   ? 'border-red-300 focus:border-red-500'
                   : focusedField === 'email'
@@ -342,13 +342,14 @@ export default function UserDetailsStep({ initialData, onNext, onBack, serverErr
                   : 'border-gray-200 hover:border-gray-300'
               }`}
             />
-            <Phone className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-            {formData.phone && !errors.phone && validatePhone(formData.phone) && (
-              <div className="absolute left-40 top-1/2 -translate-y-1/2 text-green-600">
+            {formData.phone && !errors.phone && validatePhone(formData.phone) ? (
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 text-green-600">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
+            ) : (
+              <Phone className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
             )}
           </div>
           {errors.phone && (

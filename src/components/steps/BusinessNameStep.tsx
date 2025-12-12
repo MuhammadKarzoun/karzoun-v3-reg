@@ -65,7 +65,8 @@ export default function BusinessNameStep({ initialValue, onNext }: BusinessNameS
               onFocus={() => setIsFocused(true)}
               onBlur={() => setIsFocused(false)}
               placeholder="أدخل اسم مؤسستك"
-              className={`w-full px-5 py-4 text-base rounded-xl border-2 bg-white outline-none transition-all duration-300 text-gray-900 placeholder-gray-400 ${
+              dir="rtl"
+              className={`w-full pr-5 pl-12 py-4 text-base rounded-xl border-2 bg-white outline-none transition-all duration-300 text-gray-900 placeholder-gray-400 ${
                 error
                   ? 'border-red-300 focus:border-red-500'
                   : isFocused
