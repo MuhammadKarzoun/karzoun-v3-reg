@@ -24,6 +24,11 @@ export default function BusinessNameStep({ initialValue, onNext }: BusinessNameS
       return;
     }
 
+    if (businessName.trim().length > 50) {
+      setError('اسم المؤسسة يجب ألا يتجاوز 50 حرفاً');
+      return;
+    }
+
     onNext(businessName.trim());
   };
 
@@ -66,6 +71,7 @@ export default function BusinessNameStep({ initialValue, onNext }: BusinessNameS
               onBlur={() => setIsFocused(false)}
               placeholder="أدخل اسم مؤسستك"
               dir="rtl"
+              maxLength={50}
               className={`w-full pr-5 pl-12 py-4 text-base rounded-xl border-2 bg-white outline-none transition-all duration-300 text-gray-900 placeholder-gray-400 ${
                 error
                   ? 'border-red-300 focus:border-red-500'

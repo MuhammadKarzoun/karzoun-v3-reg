@@ -101,10 +101,18 @@ export default function UserDetailsStep({ initialData, onNext, onBack, serverErr
 
     if (!formData.firstName.trim()) {
       newErrors.firstName = 'الاسم الأول مطلوب';
+    } else if (formData.firstName.trim().length < 2) {
+      newErrors.firstName = 'الاسم الأول يجب أن يكون حرفين على الأقل';
+    } else if (formData.firstName.trim().length > 50) {
+      newErrors.firstName = 'الاسم الأول يجب ألا يتجاوز 50 حرفاً';
     }
 
     if (!formData.lastName.trim()) {
       newErrors.lastName = 'اسم العائلة مطلوب';
+    } else if (formData.lastName.trim().length < 2) {
+      newErrors.lastName = 'اسم العائلة يجب أن يكون حرفين على الأقل';
+    } else if (formData.lastName.trim().length > 50) {
+      newErrors.lastName = 'اسم العائلة يجب ألا يتجاوز 50 حرفاً';
     }
 
     if (!formData.email.trim()) {
@@ -179,6 +187,7 @@ export default function UserDetailsStep({ initialData, onNext, onBack, serverErr
                 onBlur={() => setFocusedField(null)}
                 placeholder="أحمد"
                 dir="rtl"
+                maxLength={50}
                 className={`w-full pr-5 pl-12 py-4 text-base rounded-xl border-2 bg-white outline-none transition-all duration-300 text-gray-900 placeholder-gray-400 ${
                   errors.firstName
                     ? 'border-red-300 focus:border-red-500'
@@ -220,6 +229,7 @@ export default function UserDetailsStep({ initialData, onNext, onBack, serverErr
                 onBlur={() => setFocusedField(null)}
                 placeholder="محمد"
                 dir="rtl"
+                maxLength={50}
                 className={`w-full pr-5 pl-12 py-4 text-base rounded-xl border-2 bg-white outline-none transition-all duration-300 text-gray-900 placeholder-gray-400 ${
                   errors.lastName
                     ? 'border-red-300 focus:border-red-500'
